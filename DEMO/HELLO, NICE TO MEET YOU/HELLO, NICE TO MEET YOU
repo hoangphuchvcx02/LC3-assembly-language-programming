@@ -1,0 +1,18 @@
+; XUAT RA MAN HINH HELLO 		
+
+		.ORIG X3000
+	LEA 	R0, CH1
+	PUTS						;xuat ra man hinh
+
+	LD	R0, ENT
+	OUT
+
+	LEA 	R0, CH2
+	PUTS						;xuat ra man hinh
+	
+
+	HALT
+CH1	.STRINGZ	"HELLO, NICE TO MEET YOU "
+CH2	.STRINGZ	"BAN CO KHOE KHONG ? "
+ENT	.FILL		x0A				; lenh enter trong ascii
+		.END

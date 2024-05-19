@@ -1,0 +1,35 @@
+;vi?t chuong trình cho nh?p m?t ký t? s? 0 – 9 t? bàn phím và
+;ki?m tra xem ký t? s? dó có chia h?t cho 2 không. N?u có thì in ra màn hình chu?i ”Ký s? là ch?n”,
+;n?u không thì in chu?i “Ký s? là l?”. 	
+	
+		.ORIG X3000
+	IN 
+ 	LD 	R2,SO0
+	ADD 	R1,R0,R2
+ 	BRn 	NHAP_SAI
+
+ 	LD 	R2,SO9
+ 	ADD 	R3,R0,R2
+ 	BRp 	NHAP_SAI
+ 	AND 	R1,R1,#1
+
+ 	BRz 	SO_CHAN
+ 	LEA 	R0,CHUOI_LE
+ 	PUTS
+ 	HALT
+
+SO_CHAN 	LEA 	R0,CHUOI_CHAN
+ 		PUTS
+ 		HALT
+
+NHAP_SAI 	LEA 	R0,CHUOI_SAI
+ 		PUTS
+ 		HALT
+
+SO0 	.FILL -48
+SO9 	.FILL -57
+
+CHUOI_LE 	.STRINGZ "KY SO LA LE"
+CHUOI_CHAN 	.STRINGZ "KY SO LA CHAN"
+CHUOI_SAI 	.STRINGZ "KHONG PHAI KY SO"
+ 		.END 

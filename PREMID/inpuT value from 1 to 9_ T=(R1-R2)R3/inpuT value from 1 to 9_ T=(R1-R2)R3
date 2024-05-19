@@ -1,0 +1,23 @@
+; inpuT value from 1 to 9; T=(R1-R2)*R3
+	.ORIG X3000
+IN
+LD	R1, SO0
+AND	R1, R1, #0
+ADD	R1, R0, R1
+IN
+AND	R2, R2, #0
+LD	R2, SO0
+ADD	R2, R0, R2
+IN
+AND	R3, R3, #0
+LD	R3, SO0
+ADD	R3, R0, R3
+
+HALT
+
+
+SO0	.FILL #-48
+SO9	.FILL #-57
+SOASCII	.FILL #48
+
+.END

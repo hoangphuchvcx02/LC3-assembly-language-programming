@@ -1,0 +1,42 @@
+; XUAT RA MAN HINH DANG X+Y = Z
+; LUU MA ASCII CUA PHEP CONG VAO O NHO X5000 
+		.ORIG x3000
+	LEA	R5, CH3
+	LD	R3, HC1
+	LEA 	R0, CH1
+	PUTS						;xuat ra man hinh
+	GETC						;thay the cho IN
+	OUT						;hien thi ra man hinh
+	STR	R0, R5, #0				;R5+0 ra X
+
+	ADD	R1, R0, R3
+	LD	R0, ENT					;lenh xuong dong
+	OUT
+						
+	LEA 	R0, CH2
+	PUTS						;xuat ra man hinh
+	GETC
+	OUT
+	STR	R0, R5, #2				;R5+2 ra Y
+
+	ADD	R2, R0, R3
+	ADD	R4, R1, R2				; ket qua cua phep cong
+	STI	R4, DC1
+	NOT	R3, R3
+	ADD	R3, R3 #1
+	ADD	R4, R4, R3
+	STR 	R4, R5, #4
+
+	LD	R0, ENT					;lenh xuong dong
+	OUT
+	LEA	R0, CH3
+	PUTS
+	HALT
+
+CH1	.STRINGZ	"NHAP KY SO 1: "
+CH2	.STRINGZ	"NHAP KY SO 2: "
+CH3	.STRINGZ	"X+Y=Z"
+ENT	.FILL		x0A				; lenh enter trong ascii
+DC1	.FILL		x5000				; luu vao dia chi o nho x5000
+HC1	.FILL		x-30				; SO 0 TRONG ASCII HOAC #-48
+		.END

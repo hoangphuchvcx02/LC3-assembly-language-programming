@@ -1,0 +1,15 @@
+; make a string from current string that converys all lowercase characcters in the string to upper case
+; given a string in memory string at address x3050
+
+.ORIG x3000 
+LEA	R5, CH3
+	PUTS						;xuat ra man hinh
+	GETC						;thay the cho IN
+	OUT						;hien thi ra man hinh
+	
+	PUTS
+	HALT
+
+CH3	.STRINGZ	"X+Y=Z"
+
+		.END

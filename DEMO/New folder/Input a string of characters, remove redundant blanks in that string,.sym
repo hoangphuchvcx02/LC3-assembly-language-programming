@@ -1,0 +1,19 @@
+//Symbol Name		Page Address
+//----------------	------------
+//	BLANK                   301F
+//	DDR                     3033
+//	DONE                    302F
+//	DSR                     3032
+//	KBDR                    3031
+//	KBSR                    3030
+//	LOOP                    3013
+//	NEG_ENTER               3034
+//	NEG_SPACE               3035
+//	ONE_BLANK               3029
+//	POLL_KEYBOARD           3002
+//	POLL_SCREEN             3005
+//	POLL_SCREEN_2           3019
+//	REMOVE_REDUNDANT_BLANKS 3010
+//	SPACE                   3036
+//	STORAGE                 3037
+//	STORAGE_2               3038

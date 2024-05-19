@@ -1,0 +1,26 @@
+; XUAT RA MAN HINH HELLO VA NHAP 2 KY TU
+; LUU MA ASCII CUA KY TU 1 VA 2 VAO O NHO X5000 VA X6000		
+
+		.ORIG x3000
+	LEA 	R0, CH1
+	PUTS						;xuat ra man hinh
+	GETC						;thay the cho IN
+	OUT						;hien thi ra man hinh
+
+	LD	R0, ENT					;di chuyen den lenh ENT
+	OUT
+	STI	R0, DC1					;luu vao o nho dia chi DC1
+
+	LEA 	R0, CH2
+	PUTS						;xuat ra man hinh
+	GETC
+	OUT
+	STI	R0, DC2	
+
+	HALT
+CH1	.STRINGZ	"NHAP KY TU 1: "
+CH2	.STRINGZ	"NHAP KY TU 2:  "
+ENT	.FILL		x0A				; lenh enter trong ascii
+DC1	.FILL		x5000
+DC2	.FILL		x6000
+		.END

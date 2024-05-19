@@ -1,0 +1,18 @@
+;1. Write a program for ECHO (read a char and display it) by using IO registers 
+;    	KBSR, KBDR, DSR, DDR
+
+.ORIG x3000
+KEYBOARD 	LDI 	R1, KBSR
+		BRzp 	KEYBOARD
+		LDI	R0, KBDR
+SCREEN 	LDI	R1, DSR
+		BRzp 	SCREEN
+		STI 	R0, DDR
+		HALT
+
+KBSR 	.FILL xFE00
+KBDR 	.FILL xFE02
+DSR 	.FILL xFE04
+DDR 	.FILL xFE06
+
+.END

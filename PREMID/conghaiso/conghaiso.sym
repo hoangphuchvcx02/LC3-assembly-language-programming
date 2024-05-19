@@ -1,0 +1,8 @@
+//Symbol Name		Page Address
+//----------------	------------
+//	SCREEN_OUT              301C
+//	SO0                     3018
+//	SO1                     3019
+//	SO9                     301A
+//	SOASCII                 301B
+//	TIEP                    3013

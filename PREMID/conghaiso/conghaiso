@@ -1,0 +1,40 @@
+		.ORIG x3000
+	IN
+	AND	R1,R1,#0
+	LD 	R1, SO0
+	ADD	R2, R0, R1 
+	IN
+	ADD	R3, R0, R1
+	
+
+	LEA	R0, SCREEN_OUT 
+	PUTS	
+	ADD	R0, R2, R3		; KET QUA 
+	ADD	R6, R0, #0
+
+	
+	LD	R5, SO9
+	NOT	R5, R5
+	ADD	R5, R5, #1
+	ADD	R0, R5, #0
+	BRp	TIEP
+	
+	LD	R1, SOASCII
+	ADD	R0, R1, R6
+	OUT
+	HALT
+
+
+TIEP	ADD	R0, R6, #-10
+	LD	R1, SOASCII
+	ADD	R0, R1, R6
+	OUT
+	HALT
+
+	
+SO0		.FILL	#-48
+SO1		.FILL	#-49
+SO9		.FILL	#57
+SOASCII		.FILL	#48
+SCREEN_OUT	.STRINGZ "Tong cua hai so la: "
+		.END
